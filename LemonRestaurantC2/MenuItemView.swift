@@ -23,7 +23,20 @@ struct MenuItemView: View {
             Spacer()
             
             if item.price > 10 {
-                Text("Is premium!")
+                HStack{
+                    Image(systemName: "star.fill")
+                        .foregroundColor(.yellow)
+                    
+                    Text("Premium")
+                        .font(.caption)
+                }
+                .font(.caption)
+                .foregroundColor(.orange)
+                .padding(6)
+                .background(.orange.opacity(0.1))
+                .cornerRadius(6)
+                
+         
             }else if item.price < 7 {
                 Text("$\(item.price, specifier:"%.2f")")
                     .foregroundColor(.green)
